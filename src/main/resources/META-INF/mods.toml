@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[40,)"
 license="MIT License"
-#issueTrackerURL="https://github.com/LtxProgrammer/Changed-Minecraft-Mod/issues" #optional
+issueTrackerURL="https://github.com/LtxProgrammer/Changed-Vanilla/issues" #optional
 
 [[mods]]
 modId="changedvanilla"
