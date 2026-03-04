@@ -30,6 +30,6 @@ description='''Addon mod for Changed containing transfurs for vanilla mobs.'''
 [[dependencies.changedvanilla]]
     modId = "changed"
     mandatory = true
-    versionRange = "[0.15.0,)"
+    versionRange = "[0.15.1,)"
     ordering = "NONE"
     side = "BOTH"
