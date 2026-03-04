@@ -2,7 +2,9 @@
   "itemGroup.tab_changedvanilla_items": "Changed-Vanilla Items",
   "itemGroup.tab_changedvanilla_entities": "Changed-Vanilla Entities",
 
+  "entity.changedvanilla.latex_guardian": "Latex Guardian",
   "entity.changedvanilla.latex_skeleton": "Latex Skeleton",
 
+  "item.changedvanilla.latex_guardian_spawn_egg": "Latex Guardian Spawn Egg",
   "item.changedvanilla.latex_skeleton_spawn_egg": "Latex Skeleton Spawn Egg"
 }
