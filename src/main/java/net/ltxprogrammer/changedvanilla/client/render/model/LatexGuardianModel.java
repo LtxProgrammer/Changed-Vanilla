@@ -107,6 +107,8 @@ public class LatexGuardianModel extends AdvancedHumanoidModel<LatexGuardian> imp
 
         PartDefinition LowerAbdomen = Abdomen.addOrReplaceChild("LowerAbdomen", CubeListBuilder.create().texOffs(32, 0).addBox(-4.5F, -0.25F, -2.5F, 9.0F, 7.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 3.25F, 0.0F, 0.3054F, 0.0F, 0.0F));
 
+        PartDefinition abfin_r1 = LowerAbdomen.addOrReplaceChild("abfin_r1", CubeListBuilder.create().texOffs(56, 47).mirror().addBox(0.0F, -1.0F, 0.0F, 6.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(4.5F, 2.25F, -1.0F, 0.0F, 0.0F, 0.4363F));
+
         PartDefinition spike_r15 = LowerAbdomen.addOrReplaceChild("spike_r15", CubeListBuilder.create().texOffs(60, 0).mirror().addBox(0.0F, -1.0F, -1.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(-0.4F)).mirror(false), PartPose.offsetAndRotation(2.0F, 4.75F, 1.5F, -1.1272F, -0.6485F, 1.2913F));
 
         PartDefinition spike_r16 = LowerAbdomen.addOrReplaceChild("spike_r16", CubeListBuilder.create().texOffs(60, 0).addBox(-4.0F, -1.0F, -1.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(-0.4F)), PartPose.offsetAndRotation(-2.0F, 4.75F, 1.5F, -1.1272F, 0.6485F, -1.2913F));
@@ -115,9 +117,11 @@ public class LatexGuardianModel extends AdvancedHumanoidModel<LatexGuardian> imp
 
         PartDefinition spike_r18 = LowerAbdomen.addOrReplaceChild("spike_r18", CubeListBuilder.create().texOffs(60, 0).addBox(-4.0F, -1.0F, -1.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(-0.4F)), PartPose.offsetAndRotation(-2.0F, 1.0F, 1.5F, -0.6537F, 0.4718F, -1.0353F));
 
-        PartDefinition spike_r19 = LowerAbdomen.addOrReplaceChild("spike_r19", CubeListBuilder.create().texOffs(60, 0).mirror().addBox(0.0F, -1.0F, -1.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(-0.4F)).mirror(false), PartPose.offsetAndRotation(3.5F, 3.0F, 0.0F, 0.0F, 0.0F, 0.8727F));
+        PartDefinition abfin_r2 = LowerAbdomen.addOrReplaceChild("abfin_r2", CubeListBuilder.create().texOffs(56, 47).addBox(-6.0F, -1.0F, 0.0F, 6.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.5F, 2.25F, -1.0F, 0.0F, 0.0F, -0.4363F));
 
-        PartDefinition spike_r20 = LowerAbdomen.addOrReplaceChild("spike_r20", CubeListBuilder.create().texOffs(60, 0).addBox(-4.0F, -1.0F, -1.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(-0.4F)), PartPose.offsetAndRotation(-3.5F, 3.0F, 0.0F, 0.0F, 0.0F, -0.8727F));
+        PartDefinition spike_r19 = LowerAbdomen.addOrReplaceChild("spike_r19", CubeListBuilder.create().texOffs(60, 0).mirror().addBox(0.0F, -1.0F, -1.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(-0.4F)).mirror(false), PartPose.offsetAndRotation(3.5F, 3.5F, 1.0F, 0.0F, 0.0F, 0.8727F));
+
+        PartDefinition spike_r20 = LowerAbdomen.addOrReplaceChild("spike_r20", CubeListBuilder.create().texOffs(60, 0).addBox(-4.0F, -1.0F, -1.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(-0.4F)), PartPose.offsetAndRotation(-3.5F, 3.5F, 1.0F, 0.0F, 0.0F, -0.8727F));
 
         PartDefinition Tail = LowerAbdomen.addOrReplaceChild("Tail", CubeListBuilder.create().texOffs(48, 25).addBox(-4.0F, -0.25F, -2.0F, 8.0F, 4.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offsetAndRotation(0.0F, 7.0F, 0.0F, 0.48F, 0.0F, 0.2618F));
 
