@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ChangedVanillaEntityRenderers {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_FOX.get(), LatexFoxRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_GUARDIAN.get(), LatexGuardianRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_SKELETON.get(), LatexSkeletonRenderer::new);
     }

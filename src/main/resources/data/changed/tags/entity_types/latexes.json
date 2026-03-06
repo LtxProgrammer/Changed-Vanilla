@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "changedvanilla:latex_fox",
     "changedvanilla:latex_guardian",
     "changedvanilla:latex_skeleton"
   ]

@@ -1,0 +1,12 @@
+{
+  "entities": [
+    "changedvanilla:latex_guardian"
+  ],
+  "slots": [
+    "changed:body",
+    "changed:hands",
+    "changed:head",
+    "changed:face",
+    "changed:neck"
+  ]
+}

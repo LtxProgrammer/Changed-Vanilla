@@ -1,0 +1,15 @@
+{
+  "entities": [
+    "changedvanilla:latex_fox",
+    "changedvanilla:latex_skeleton"
+  ],
+  "slots": [
+    "changed:body",
+    "changed:hands",
+    "changed:head",
+    "changed:face",
+    "changed:full_body",
+    "changed:legs",
+    "changed:neck"
+  ]
+}
