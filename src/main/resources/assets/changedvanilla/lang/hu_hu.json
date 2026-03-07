@@ -2,9 +2,12 @@
   "itemGroup.tab_changedvanilla_items": "Changed-Vanilla Tárgyak",
   "itemGroup.tab_changedvanilla_entities": "Changed-Vanilla Entitások",
 
+  "entity.changedvanilla.latex_fox": "Latex róka",
+  "entity.changedvanilla.latex_fox_partial": "Részleges latex róka",
   "entity.changedvanilla.latex_guardian": "Latex őrszem",
   "entity.changedvanilla.latex_skeleton": "Latex csontváz",
-
+  
+  "item.changedvanilla.latex_fox_spawn_egg": "Latex rókát idéző tojás",
   "item.changedvanilla.latex_guardian_spawn_egg": "Latex őrszemet idéző tojás",
   "item.changedvanilla.latex_skeleton_spawn_egg": "Latex csontvázat idéző tojás"
 }
