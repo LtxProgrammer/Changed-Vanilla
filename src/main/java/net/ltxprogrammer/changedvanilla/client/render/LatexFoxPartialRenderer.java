@@ -1,5 +1,6 @@
 package net.ltxprogrammer.changedvanilla.client.render;
 
+import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.ltxprogrammer.changed.client.renderer.AdvancedHumanoidRenderer;
 import net.ltxprogrammer.changed.client.renderer.layers.*;
@@ -12,20 +13,32 @@ import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.animal.Fox;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+import java.util.Map;
+
 public class LatexFoxPartialRenderer extends AdvancedHumanoidRenderer<LatexFoxPartial, LatexFoxPartialModel> {
-    public static final ResourceLocation DEFAULT_SKIN_LOCATION = ChangedVanilla.modResource("textures/entity/latex_fox_partial.png");
-    public static final ResourceLocation DEFAULT_SKIN_SLIM_LOCATION = ChangedVanilla.modResource("textures/entity/latex_fox_partial_slim.png");
+    private final Map<Fox.Type, ResourceLocation> skinLocations;
 
     public LatexFoxPartialRenderer(EntityRendererProvider.Context context, boolean slim) {
         super(context, LatexFoxPartialModel.human(context.bakeLayer(
                 slim ? LatexFoxPartialModel.LAYER_LOCATION_HUMAN_SLIM : LatexFoxPartialModel.LAYER_LOCATION_HUMAN)), ArmorLatexMaleWolfModel.MODEL_SET, 0.5f);
+
+        var skinLocationsBuilder = ImmutableMap.<Fox.Type, ResourceLocation>builder();
+        Arrays.stream(Fox.Type.values()).forEach(type -> {
+            skinLocationsBuilder.put(type, ChangedVanilla.modResource((slim ?
+                    "textures/entity/latex_%s_fox_partial_slim.png" :
+                    "textures/entity/latex_%s_fox_partial.png").formatted(type.getSerializedName())));
+        });
+        this.skinLocations = skinLocationsBuilder.build();
+
         var partialModel = new LatexPartialLayer<>(this, LatexFoxPartialModel.latex(
                 context.bakeLayer(slim ? LatexFoxPartialModel.LAYER_LOCATION_LATEX_SLIM : LatexFoxPartialModel.LAYER_LOCATION_LATEX)),
-                slim ? DEFAULT_SKIN_SLIM_LOCATION : DEFAULT_SKIN_LOCATION);
+                this::getPartialTextureLocation);
         this.addLayer(partialModel);
-        this.addLayer(new LatexParticlesLayer<>(this).addModel(partialModel.getModel(), entity -> partialModel.getTexture()));
+        this.addLayer(new LatexParticlesLayer<>(this).addModel(partialModel.getModel(), partialModel.getTextureFunction()));
         this.addLayer(TransfurCapeLayer.normalCape(this, context.getModelSet()));
         this.addLayer(new DarkLatexMaskLayer<>(this, context.getModelSet()));
         this.addLayer(new GasMaskLayer<>(this, context.getModelSet()));
@@ -38,6 +51,10 @@ public class LatexFoxPartialRenderer extends AdvancedHumanoidRenderer<LatexFoxPa
     @Override
     public ResourceLocation getTextureLocation(LatexFoxPartial partial) {
         return partial.getSkinTextureLocation();
+    }
+
+    public ResourceLocation getPartialTextureLocation(LatexFoxPartial partial) {
+        return this.skinLocations.get(partial.getVariant());
     }
 
     @Override
