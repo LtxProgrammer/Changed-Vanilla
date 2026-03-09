@@ -13,6 +13,7 @@ public class ChangedVanillaLayerDefinitions {
         event.registerLayerDefinition(LatexFoxModel.LAYER_LOCATION, LatexFoxModel::createBodyLayer);
         event.registerLayerDefinition(LatexFoxPartialModel.LAYER_LOCATION_LATEX, () -> LatexFoxPartialModel.createLatexLayer(false));
         event.registerLayerDefinition(LatexFoxPartialModel.LAYER_LOCATION_LATEX_SLIM, () -> LatexFoxPartialModel.createLatexLayer(true));
+        event.registerLayerDefinition(LatexGhastModel.LAYER_LOCATION, LatexGhastModel::createBodyLayer);
         event.registerLayerDefinition(LatexGuardianModel.LAYER_LOCATION, LatexGuardianModel::createBodyLayer);
         event.registerLayerDefinition(LatexSkeletonModel.LAYER_LOCATION, LatexSkeletonModel::createBodyLayer);
     }
