@@ -2,6 +2,7 @@ package net.ltxprogrammer.changedvanilla.entity;
 
 import com.google.common.collect.ImmutableMap;
 import net.ltxprogrammer.changed.entity.*;
+import net.ltxprogrammer.changed.entity.beast.CustomLatexEntity;
 import net.ltxprogrammer.changed.util.Color3;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
@@ -16,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class LatexFox extends ChangedEntity implements VariantHolder<Fox.Type>, EntityColorProvider {
+public class LatexFox extends ChangedEntity implements VariantHolder<Fox.Type>, EntityColorProvider, ModifiableEntity {
     private static final EntityDataAccessor<Integer> DATA_TYPE_ID = SynchedEntityData.defineId(LatexFox.class, EntityDataSerializers.INT);
     private static final Map<Fox.Type, Color3> COAT_COLORS = Util.make(ImmutableMap.builder(), LatexFox::addCoatColors).build();
 
@@ -25,8 +26,23 @@ public class LatexFox extends ChangedEntity implements VariantHolder<Fox.Type>, 
                 .put(Fox.Type.SNOW, Color3.fromInt(0xadccce));
     }
 
+    private final Map<String, ModificationVector> modificationVectors;
+
+    protected void buildModificationVectors(ImmutableMap.Builder<String, ModificationVector> builder) {
+        builder.put("coatColor", ModificationVector.simpleEnum(Fox.Type.class, this::getVariant, this::setVariant, "changedvanilla.stasis.modify.coatcolor"));
+    }
+
+    @Override
+    public Map<String, ModificationVector> getModificationVectors() {
+        return modificationVectors;
+    }
+
     public LatexFox(EntityType<? extends ChangedEntity> type, Level level) {
         super(type, level);
+
+        var builder = ImmutableMap.<String, ModificationVector>builder();
+        this.buildModificationVectors(builder);
+        this.modificationVectors = builder.build();
     }
 
     public Fox.Type getVariant() {
