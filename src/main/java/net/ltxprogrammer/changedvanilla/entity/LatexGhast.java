@@ -105,7 +105,7 @@ public class LatexGhast extends ChangedEntity {
         if (applyEntity.isSleeping())
             return WantedVerticalMovement.IDLE;
 
-        if (applyEntity.jumping)
+        if (this.jumping)
             return WantedVerticalMovement.RISE_UP;
         if (applyEntity.hasPose(Pose.CROUCHING))
             return WantedVerticalMovement.SINK_DOWN;
