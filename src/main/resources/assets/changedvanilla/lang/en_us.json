@@ -4,10 +4,15 @@
 
   "entity.changedvanilla.latex_fox": "Latex Fox",
   "entity.changedvanilla.latex_fox_partial": "Partial Latex Fox",
+  "entity.changedvanilla.latex_ghast": "Latex Ghast",
   "entity.changedvanilla.latex_guardian": "Latex Guardian",
   "entity.changedvanilla.latex_skeleton": "Latex Skeleton",
 
   "item.changedvanilla.latex_fox_spawn_egg": "Latex Fox Spawn Egg",
+  "item.changedvanilla.latex_ghast_spawn_egg": "Latex Ghast Spawn Egg",
   "item.changedvanilla.latex_guardian_spawn_egg": "Latex Guardian Spawn Egg",
-  "item.changedvanilla.latex_skeleton_spawn_egg": "Latex Skeleton Spawn Egg"
+  "item.changedvanilla.latex_skeleton_spawn_egg": "Latex Skeleton Spawn Egg",
+
+  "changedvanilla.stasis.modify.coatcolor": "Coat Color: %s",
+  "changedvanilla.stasis.modify.coatcolor.tooltip": "Config: Modifies the latex beast's coat color"
 }

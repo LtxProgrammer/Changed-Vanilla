@@ -29,8 +29,8 @@ public class LatexFoxPartialRenderer extends AdvancedHumanoidRenderer<LatexFoxPa
         var skinLocationsBuilder = ImmutableMap.<Fox.Type, ResourceLocation>builder();
         Arrays.stream(Fox.Type.values()).forEach(type -> {
             skinLocationsBuilder.put(type, ChangedVanilla.modResource((slim ?
-                    "textures/entity/latex_%s_fox_partial_slim.png" :
-                    "textures/entity/latex_%s_fox_partial.png").formatted(type.getSerializedName())));
+                    "textures/entity/latex_fox_partial/%s_slim.png" :
+                    "textures/entity/latex_fox_partial/%s.png").formatted(type.getSerializedName())));
         });
         this.skinLocations = skinLocationsBuilder.build();
 

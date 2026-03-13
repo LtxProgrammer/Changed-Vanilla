@@ -28,7 +28,7 @@ public class LatexFoxRenderer extends AdvancedHumanoidRenderer<LatexFox, LatexFo
 
         var skinLocationsBuilder = ImmutableMap.<Fox.Type, ResourceLocation>builder();
         Arrays.stream(Fox.Type.values()).forEach(type -> {
-            skinLocationsBuilder.put(type, ChangedVanilla.modResource("textures/entity/latex_%s_fox.png".formatted(type.getSerializedName())));
+            skinLocationsBuilder.put(type, ChangedVanilla.modResource("textures/entity/latex_fox/%s.png".formatted(type.getSerializedName())));
         });
 
         this.skinLocations = skinLocationsBuilder.build();
