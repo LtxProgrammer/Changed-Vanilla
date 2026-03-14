@@ -84,6 +84,8 @@ repositories {
         name = "Changed"
         url = "https://ltxprogrammer.github.io/maven/"
     }
+    maven { url "https://cursemaven.com/" }
+    maven { url "https://maven.blamejared.com/" }
 }
 
 dependencies {
@@ -92,6 +94,11 @@ dependencies {
     runtimeOnly("io.github.llamalad7:mixinextras-forge:0.4.1")
 
     implementation fg.deobf("net.ltxprogrammer.changed:Changed-m${minecraft_version}-f${forge_version}:v${changed_version}")
+
+    runtimeOnly fg.deobf("curse.maven:modernfix-790626:6609555")
+    runtimeOnly fg.deobf("org.embeddedt:embeddium-1.20.1:0.3.9-git.f603a93+mc1.20.1")
+    runtimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
+    runtimeOnly fg.deobf("curse.maven:ferritecore-429235:4810975")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
