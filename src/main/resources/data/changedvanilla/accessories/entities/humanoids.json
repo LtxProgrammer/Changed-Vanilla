@@ -1,7 +1,9 @@
 {
   "entities": [
+    "changedvanilla:latex_cat",
     "changedvanilla:latex_fox",
     "changedvanilla:latex_fox_partial",
+    "changedvanilla:latex_ocelot",
     "changedvanilla:latex_skeleton"
   ],
   "slots": [

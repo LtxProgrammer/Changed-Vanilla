@@ -1,0 +1,1 @@
+This repository holds the source code for the **Changed-Vanilla** addon mod for the **Changed: Minecraft Mod**.

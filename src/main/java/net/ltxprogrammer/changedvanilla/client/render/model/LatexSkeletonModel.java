@@ -16,7 +16,6 @@ import net.minecraft.world.entity.HumanoidArm;
 import java.util.List;
 
 public class LatexSkeletonModel extends AdvancedHumanoidModel<LatexSkeleton> {
-    // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ChangedVanilla.modResource("latex_skeleton"), "main");
     private final ModelPart RightLeg;
     private final ModelPart LeftLeg;

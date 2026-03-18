@@ -1,10 +1,12 @@
 {
   "replace": false,
   "values": [
+    "changedvanilla:latex_cat",
     "changedvanilla:latex_fox",
     "changedvanilla:latex_fox_partial",
     "changedvanilla:latex_ghast",
     "changedvanilla:latex_guardian",
+    "changedvanilla:latex_ocelot",
     "changedvanilla:latex_skeleton"
   ]
 }
