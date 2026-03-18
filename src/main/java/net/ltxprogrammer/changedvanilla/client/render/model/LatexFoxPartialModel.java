@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 public class LatexFoxPartialModel extends AdvancedHumanoidModel<LatexFoxPartial> {
-    // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION_HUMAN = DarkLatexWolfPartialModel.LAYER_LOCATION_HUMAN;
     public static final ModelLayerLocation LAYER_LOCATION_HUMAN_SLIM = DarkLatexWolfPartialModel.LAYER_LOCATION_HUMAN_SLIM;
     public static final ModelLayerLocation LAYER_LOCATION_LATEX = new ModelLayerLocation(ChangedVanilla.modResource("latex_fox_partial"), "latex");

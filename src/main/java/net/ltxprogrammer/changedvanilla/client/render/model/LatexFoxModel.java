@@ -17,7 +17,6 @@ import net.minecraft.world.entity.HumanoidArm;
 import java.util.List;
 
 public class LatexFoxModel extends AdvancedHumanoidModel<LatexFox> {
-    // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ChangedVanilla.modResource("latex_fox"), "main");
     private final ModelPart RightLeg;
     private final ModelPart LeftLeg;

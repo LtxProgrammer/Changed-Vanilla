@@ -18,9 +18,11 @@ public class ChangedVanillaEntityRenderers {
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_CAT.get(), LatexCatRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_FOX.get(), LatexFoxRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_GHAST.get(), LatexGhastRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_GUARDIAN.get(), LatexGuardianRenderer::new);
+        ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_OCELOT.get(), LatexOcelotRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_SKELETON.get(), LatexSkeletonRenderer::new);
     }
 }
