@@ -1,0 +1,38 @@
+{
+  "itemGroup.tab_changedvanilla_items": "체인지드-바닐라 아이템",
+  "itemGroup.tab_changedvanilla_entities": "체인지드-바닐라 엔티티",
+
+  "entity.changedvanilla.latex_cat": "점액 고양이",
+  "entity.changedvanilla.latex_chicken": "점액 닭",
+  "entity.changedvanilla.latex_cow": "점액 소",
+  "entity.changedvanilla.latex_creeper": "점액 크리퍼",
+  "entity.changedvanilla.latex_fox": "점액 여우",
+  "entity.changedvanilla.latex_fox_partial": "불완전한 점액 여우",
+  "entity.changedvanilla.latex_ghast": "점액 가스트",
+  "entity.changedvanilla.latex_guardian": "점액 가디언",
+  "entity.changedvanilla.latex_ocelot": "점액 오셀롯",
+  "entity.changedvanilla.latex_pig": "점액 돼지",
+  "entity.changedvanilla.latex_sheep": "점액 양",
+  "entity.changedvanilla.latex_skeleton": "점액 스켈레톤",
+  "entity.changedvanilla.latex_slime": "점액 슬라임",
+  "entity.changedvanilla.latex_spider": "점액 거미",
+  "entity.changedvanilla.latex_zombie": "점액 좀비",
+
+  "item.changedvanilla.latex_cat_spawn_egg": "점액 고양이 생성 알",
+  "item.changedvanilla.latex_chicken_spawn_egg": "점액 닭 생성 알",
+  "item.changedvanilla.latex_cow_spawn_egg": "점액 소 생성 알",
+  "item.changedvanilla.latex_creeper_spawn_egg": "점액 크리퍼 생성 알",
+  "item.changedvanilla.latex_fox_spawn_egg": "점액 여우 생성 알",
+  "item.changedvanilla.latex_ghast_spawn_egg": "점액 가스트 생성 알",
+  "item.changedvanilla.latex_guardian_spawn_egg": "점액 가디언 생성 알",
+  "item.changedvanilla.latex_ocelot_spawn_egg": "점액 오셀롯 생성 알",
+  "item.changedvanilla.latex_pig_spawn_egg": "점액 돼지 생성 알",
+  "item.changedvanilla.latex_sheep_spawn_egg": "점액 양 생성 알",
+  "item.changedvanilla.latex_skeleton_spawn_egg": "점액 스켈레톤 생성 알",
+  "item.changedvanilla.latex_slime_spawn_egg": "점액 슬라임 생성 알",
+  "item.changedvanilla.latex_spider_spawn_egg": "점액 거미 생성 알",
+  "item.changedvanilla.latex_zombie_spawn_egg": "점액 좀비 생성 알",
+
+  "changedvanilla.stasis.modify.coatcolor": "털 색: %s",
+  "changedvanilla.stasis.modify.coatcolor.tooltip": "설정: 점액 짐승의 털 색 수정"
+}
