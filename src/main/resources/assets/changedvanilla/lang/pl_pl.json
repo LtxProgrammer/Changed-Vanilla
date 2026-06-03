@@ -1,0 +1,38 @@
+{
+  "itemGroup.tab_changedvanilla_items": "Przedmioty z Changed-Vanilla",
+  "itemGroup.tab_changedvanilla_entities": "Moby z Changed-Vanilla",
+
+  "entity.changedvanilla.latex_cat": "Latexowy kot",
+  "entity.changedvanilla.latex_chicken": "Latex kurczak",
+  "entity.changedvanilla.latex_cow": "Latexowa krowa",
+  "entity.changedvanilla.latex_creeper": "Latexowy creeper",
+  "entity.changedvanilla.latex_fox": "Latexowy lis",
+  "entity.changedvanilla.latex_fox_partial": "Częściowy latexowy lis",
+  "entity.changedvanilla.latex_ghast": "Latexowy ghast",
+  "entity.changedvanilla.latex_guardian": "Latexowy strażnik",
+  "entity.changedvanilla.latex_ocelot": "Latexowy ocelot",
+  "entity.changedvanilla.latex_pig": "Latexowa świnia",
+  "entity.changedvanilla.latex_sheep": "Latexowa owca",
+  "entity.changedvanilla.latex_skeleton": "Latexowy szkielet",
+  "entity.changedvanilla.latex_slime": "Latexowy szlam",
+  "entity.changedvanilla.latex_spider": "Latexowy pająk",
+  "entity.changedvanilla.latex_zombie": "Latexowy zombie",
+
+  "item.changedvanilla.latex_cat_spawn_egg": "Jajko przywołujące latexowego kota ",
+  "item.changedvanilla.latex_chicken_spawn_egg": "Jajko przywołujące latexowego kurczaka",
+  "item.changedvanilla.latex_cow_spawn_egg": "Jajko przywołujące latexową krowę",
+  "item.changedvanilla.latex_creeper_spawn_egg": "Jajko przywołujące latexowego creepera ",
+  "item.changedvanilla.latex_fox_spawn_egg": "Jajko przywołujące latexowego lisa ",
+  "item.changedvanilla.latex_ghast_spawn_egg": "Jajko przywołujące latexowego ghasta ",
+  "item.changedvanilla.latex_guardian_spawn_egg": "Jajko przywołujące latexowego strażnika ",
+  "item.changedvanilla.latex_ocelot_spawn_egg": "Jajko przywołujące latexowego ocelota ",
+  "item.changedvanilla.latex_pig_spawn_egg": "Jajko przywołujące latexową świnię ",
+  "item.changedvanilla.latex_sheep_spawn_egg": "Jajko przywołujące latexową owcę ",
+  "item.changedvanilla.latex_skeleton_spawn_egg": "Jajko przywołujące latexowego szkieleta",
+  "item.changedvanilla.latex_slime_spawn_egg": "Jajko przywołujące latexowy szlam",
+  "item.changedvanilla.latex_spider_spawn_egg": "Jajko przywołujące latexowego pająka ",
+  "item.changedvanilla.latex_zombie_spawn_egg": "Jajko przywołujące latexowego zombie ",
+
+  "changedvanilla.stasis.modify.coatcolor": "Kolor sierści: %s",
+  "changedvanilla.stasis.modify.coatcolor.tooltip": "Konfiguracja: Zmienia kolor sierści latexa"
+}
