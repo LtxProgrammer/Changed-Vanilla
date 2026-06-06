@@ -23,6 +23,14 @@ public class ChangedVanilla {
         ChangedVanillaEntities.REGISTRY.register(modEventBus);
         ChangedVanillaItems.REGISTRY.register(modEventBus);
         ChangedVanillaTransfurVariants.REGISTRY.register(modEventBus);
+
+        registerLoadingEventListeners(modEventBus);
+    }
+
+    private void registerLoadingEventListeners(IEventBus eventBus) {
+        eventBus.addListener(ChangedVanillaEntities::registerSpawnPlacements);
+        eventBus.addListener(ChangedVanillaEntities::registerAttributes);
+        eventBus.addListener(ChangedVanillaTransfurVariants::registerMobAssimilation);
     }
 
     public static ResourceLocation modResource(String path) {
@@ -30,6 +38,6 @@ public class ChangedVanilla {
     }
 
     public static String modResourceStr(String path) {
-        return "changedvanilla:" + path;
+        return MODID + ":" + path;
     }
 }

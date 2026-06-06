@@ -53,34 +53,34 @@ public class ChangedVanillaTransfurVariants {
     public static final RegistryObject<TransfurVariant<LatexZombie>> LATEX_ZOMBIE = register("latex_zombie",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_ZOMBIE));
 
-    static {
-        ProcessTransfur.registerMobAssimilation(EntityType.CAT, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+    public static void registerMobAssimilation(ProcessTransfur.GatherMobAssimilationsEvent event) {
+        event.register(EntityType.CAT, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_CAT, 3.0f, (sourceEntity, newEntity) -> {
                     if (newEntity.getChangedEntity() instanceof LatexCat targetEntity)
                         targetEntity.setVariant(sourceEntity.getVariant());
                 })));
-        ProcessTransfur.registerMobAssimilation(EntityType.CHICKEN, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        event.register(EntityType.CHICKEN, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_CHICKEN, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.COW, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        event.register(EntityType.COW, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_COW, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.CREEPER, EntityAssimilationBehavior.latexAssimilation(1.0D, true,
+        event.register(EntityType.CREEPER, EntityAssimilationBehavior.latexAssimilation(1.0D, true,
                 TransfurDecider.simpleMobDecider(LATEX_CREEPER, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.FOX, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        event.register(EntityType.FOX, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_FOX, 3.0f, (sourceEntity, newEntity) -> {
                     if (newEntity.getChangedEntity() instanceof LatexFox targetEntity)
                         targetEntity.setVariant(sourceEntity.getVariant());
                 })));
-        /*ProcessTransfur.registerMobAssimilation(EntityType.GUARDIAN, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        /*event.register(EntityType.GUARDIAN, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_GUARDIAN, 3.0f)));*/
-        ProcessTransfur.registerMobAssimilation(EntityType.OCELOT, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        event.register(EntityType.OCELOT, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_OCELOT, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.SHEEP, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        event.register(EntityType.SHEEP, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_SHEEP, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.PIG, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        event.register(EntityType.PIG, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_PIG, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.SKELETON, EntityAssimilationBehavior.uniqueVariant(LATEX_SKELETON));
-        ProcessTransfur.registerMobAssimilation(EntityType.SPIDER, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        event.register(EntityType.SKELETON, EntityAssimilationBehavior.uniqueVariant(LATEX_SKELETON));
+        event.register(EntityType.SPIDER, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_SPIDER, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.ZOMBIE, EntityAssimilationBehavior.uniqueVariant(LATEX_ZOMBIE));
+        event.register(EntityType.ZOMBIE, EntityAssimilationBehavior.uniqueVariant(LATEX_ZOMBIE));
     }
 }

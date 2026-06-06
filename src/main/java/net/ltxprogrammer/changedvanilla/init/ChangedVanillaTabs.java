@@ -2,6 +2,7 @@ package net.ltxprogrammer.changedvanilla.init;
 
 import net.ltxprogrammer.changed.entity.variant.TransfurVariant;
 import net.ltxprogrammer.changed.init.ChangedItems;
+import net.ltxprogrammer.changed.item.Syringe;
 import net.ltxprogrammer.changedvanilla.ChangedVanilla;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -20,12 +21,12 @@ public class ChangedVanillaTabs {
 
     private static RegistryObject<CreativeModeTab> register(String id, Function<CreativeModeTab.Builder, CreativeModeTab> finalizer) {
         return REGISTRY.register(id, () -> finalizer.apply(
-                CreativeModeTab.builder().title(Component.translatable("itemGroup.tab_changedvanilla_" + id))
+                CreativeModeTab.builder().title(Component.translatable("itemGroup.tab_" + ChangedVanilla.MODID + "_" + id))
         ));
     }
 
     public static RegistryObject<CreativeModeTab> TAB_CHANGEDV_ITEMS = register("items", builder ->
-            builder.icon(() -> new ItemStack(ChangedItems.LATEX_BASE.get()))
+            builder.icon(() -> Syringe.setVariant(new ItemStack(ChangedItems.LATEX_SYRINGE.get()), ChangedVanillaTransfurVariants.LATEX_CREEPER.getId()))
                     .displayItems((params, output) -> {
                         ChangedItems.DARK_LATEX_MASK.get().fillItemList(CHANGEDVANILLA_ONLY_TRANSFURS, params, output);
                         ChangedItems.LATEX_SYRINGE.get().fillItemList(CHANGEDVANILLA_ONLY_TRANSFURS, params, output);
@@ -35,7 +36,7 @@ public class ChangedVanillaTabs {
                     .build());
 
     public static RegistryObject<CreativeModeTab> TAB_CHANGEDV_ENTITIES = register("entities", builder ->
-            builder.icon(() -> new ItemStack(ChangedItems.DARK_LATEX_MASK.get()))
+            builder.icon(() -> new ItemStack(ChangedVanillaEntities.SPAWN_EGGS.get(ChangedVanillaEntities.LATEX_CREEPER).get()))
                     .displayItems((params, output) -> {
                         ChangedVanillaEntities.SPAWN_EGGS.values().stream()
                                 .map(RegistryObject::get)

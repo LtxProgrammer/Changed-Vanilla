@@ -12,8 +12,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -21,7 +19,6 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ChangedVanillaEntities {
     public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ChangedVanilla.MODID);
     public static final Map<RegistryObject<? extends EntityType<?>>, RegistryObject<ForgeSpawnEggItem>> SPAWN_EGGS = new HashMap<>();
@@ -85,7 +82,6 @@ public class ChangedVanillaEntities {
         return entityType;
     }
 
-    @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
         event.register(LATEX_CAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexCat::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
@@ -117,7 +113,6 @@ public class ChangedVanillaEntities {
                 LatexZombie::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
     }
 
-    @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(LATEX_CAT.get(), LatexCat.createLatexAttributes().build());
         event.put(LATEX_CHICKEN.get(), LatexChicken.createLatexAttributes().build());
