@@ -18,6 +18,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.control.MoveControl;
+import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RangedBowAttackGoal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
@@ -41,7 +42,7 @@ import java.time.temporal.ChronoField;
 import java.util.Objects;
 
 public class LatexSkeleton extends AbstractLatexMonster implements RangedAttackMob {
-    private MeleeAttackGoal meleeGoal = null;
+    private @Nullable Goal meleeGoal = null;
     private final RangedBowAttackGoal<LatexSkeleton> bowGoal = new RangedBowAttackGoal<>(this, 0.15D, 20, 15.0F);
 
     public LatexSkeleton(EntityType<? extends ChangedEntity> type, Level level) {
@@ -58,14 +59,9 @@ public class LatexSkeleton extends AbstractLatexMonster implements RangedAttackM
     }
 
     @Override
-    protected void registerGoals() {
-        super.registerGoals();
-        this.meleeGoal = this.goalSelector.getAvailableGoals().stream().map(WrappedGoal::getGoal)
-                .map(goal -> {
-                    if (goal instanceof MeleeAttackGoal meleeAttackGoal)
-                        return meleeAttackGoal;
-                    return null;
-                }).filter(Objects::nonNull).findFirst().orElse(null);
+    protected @Nullable Goal makeMeleeTransfurGoal() {
+        this.meleeGoal = super.makeMeleeTransfurGoal();
+        return this.meleeGoal;
     }
 
     @Override
@@ -106,7 +102,8 @@ public class LatexSkeleton extends AbstractLatexMonster implements RangedAttackM
             return;
 
         if (this.level() != null && !this.level().isClientSide) {
-            this.goalSelector.removeGoal(this.meleeGoal);
+            if (this.meleeGoal != null)
+                this.goalSelector.removeGoal(this.meleeGoal);
             this.goalSelector.removeGoal(this.bowGoal);
             ItemStack itemstack = this.getItemInHand(ProjectileUtil.getWeaponHoldingHand(this, item -> item instanceof net.minecraft.world.item.BowItem));
             if (itemstack.is(Items.BOW)) {
@@ -117,7 +114,7 @@ public class LatexSkeleton extends AbstractLatexMonster implements RangedAttackM
 
                 this.bowGoal.setMinAttackInterval(i);
                 this.goalSelector.addGoal(1, this.bowGoal);
-            } else {
+            } else if (this.meleeGoal != null) {
                 this.goalSelector.addGoal(1, this.meleeGoal);
             }
 
