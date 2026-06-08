@@ -2,7 +2,9 @@ package net.ltxprogrammer.changedvanilla.entity;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
+import net.ltxprogrammer.changed.ability.IAbstractChangedEntity;
 import net.ltxprogrammer.changed.entity.*;
+import net.ltxprogrammer.changed.entity.ai.LatexAssimilationDecision;
 import net.ltxprogrammer.changed.util.Color3;
 import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -11,12 +13,18 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.VariantHolder;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.CatVariantTags;
+import net.minecraft.tags.StructureTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.animal.CatVariant;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
@@ -58,6 +66,13 @@ public class LatexCat extends ChangedEntity implements VariantHolder<CatVariant>
         var builder = ImmutableMap.<String, ModificationVector>builder();
         this.buildModificationVectors(builder);
         this.modificationVectors = builder.build();
+    }
+
+    @Override
+    public void onReplicateOther(IAbstractChangedEntity other) {
+        super.onReplicateOther(other);
+        if (other.getChangedEntity() instanceof LatexCat otherCat)
+            otherCat.setVariant(this.getVariant());
     }
 
     public @NotNull CatVariant getVariant() {
@@ -129,5 +144,24 @@ public class LatexCat extends ChangedEntity implements VariantHolder<CatVariant>
     @Override
     public Color3 getBackColor() {
         return COAT_COLORS.getOrDefault(this.getVariant(), DEFAULT_COAT_COLOR).getFirst();
+    }
+
+    @Override
+    public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroup, @Nullable CompoundTag tag) {
+        spawnGroup = super.finalizeSpawn(level, difficulty, spawnType, spawnGroup, tag);
+        boolean flag = level.getMoonBrightness() > 0.9F;
+        TagKey<CatVariant> tagkey = flag ? CatVariantTags.FULL_MOON_SPAWNS : CatVariantTags.DEFAULT_SPAWNS;
+        BuiltInRegistries.CAT_VARIANT.getTag(tagkey).flatMap((p_289435_) -> {
+            return p_289435_.getRandomElement(level.getRandom());
+        }).ifPresent((p_262565_) -> {
+            this.setVariant(p_262565_.value());
+        });
+        ServerLevel serverlevel = level.getLevel();
+        if (serverlevel.structureManager().getStructureWithPieceAt(this.blockPosition(), StructureTags.CATS_SPAWN_AS_BLACK).isValid()) {
+            this.setVariant(BuiltInRegistries.CAT_VARIANT.getOrThrow(CatVariant.ALL_BLACK));
+            this.setPersistenceRequired();
+        }
+
+        return spawnGroup;
     }
 }
